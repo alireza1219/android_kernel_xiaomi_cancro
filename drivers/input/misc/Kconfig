@@ -142,6 +142,14 @@ config INPUT_MAX8925_ONKEY
 	  To compile this driver as a module, choose M here: the module
 	  will be called max8925_onkey.
 
+config INPUT_DRV260X_FF_MEMLESS
+	tristate "TI DRV260x haptic driver"
+	depends on I2C && SYSFS
+	select INPUT_FF_MEMLESS
+	help
+	  If you say yes here you get support for the TI DRV260x
+	  ff-memless driver.
+
 config INPUT_MAX8997_HAPTIC
 	tristate "MAXIM MAX8997 haptic controller support"
 	depends on HAVE_PWM && MFD_MAX8997
